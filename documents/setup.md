@@ -45,6 +45,34 @@
     pnpm install
     ```
 
+## [Deploy to Github Pages](https://docs.github.com/en/pages/quickstart)
+
+1. set `basePath` for production env only in `next.config.js`
+
+    ```js
+    // ...
+    const json = require('./package.json');
+    const projectName = json.name;
+
+    const isProduction = process.env.NODE_ENV === 'production';
+
+    // ...
+    const nextConfig = {
+        // ...
+        basePath: isProduction ? `/${projectName}` : '',
+    };
+    //...
+    ```
+
+1. add scripts to `package.json`
+    ```json
+    {
+        "scripts": {
+            "export": "NODE_ENV=production next build && next export -o docs && touch docs/.nojekyll"
+        }
+    }
+    ```
+
 ## [Eslint and Prettier](https://dev.to/robertcoopercode/using-eslint-and-prettier-in-a-typescript-project-53jb)
 
 1. remove `.eslintrc.json`

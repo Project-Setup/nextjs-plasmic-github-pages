@@ -1,18 +1,20 @@
 const json = require('./package.json');
-const folder = json.name;
+const projectName = json.name;
 
 const isProduction = process.env.NODE_ENV === 'production';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
-  basePath: isProduction ? `/${folder}` : '',
-  exportPathMap: async () => {
-    return {
-      '/': { page: '/' },
-    };
-  },
+  swcMinify: isProduction,
+  basePath: isProduction ? `/${projectName}` : '',
+  exportPathMap: isProduction
+    ? async () => {
+        return {
+          '/': { page: '/' },
+        };
+      }
+    : undefined,
 };
 
 module.exports = nextConfig;
