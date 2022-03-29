@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-plasmic",
+  "name": "nextjs-plasmic-github-pages",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export",
+    "export": "NODE_ENV=production next build && next export && touch out/.nojekyll",
     "lint": "next lint",
     "codegen": "graphql-codegen --config lib/grpahql-codegen/codegen.yml",
     "test": "jest --config ./__tests__/jest.config.js",
@@ -46,20 +46,21 @@
     "prettier": "^2.5.1",
     "typescript": "4.6.2"
   },
-  "description": "## Setup",
+  "description": "Project setup with nextjs, plasmic, github pages",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Project-Setup/nextjs-plasmic-graphql.git"
+    "url": "git+https://github.com/Project-Setup/nextjs-plasmic-github-pages.git"
   },
   "keywords": [
     "nextjs",
     "plasmic",
-    "graphql"
+    "graphql",
+    "github-pages"
   ],
   "author": "David Chen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Project-Setup/nextjs-plasmic-graphql/issues"
+    "url": "https://github.com/Project-Setup/nextjs-plasmic-github-pages/issues"
   },
-  "homepage": "https://github.com/Project-Setup/nextjs-plasmic-graphql#readme"
+  "homepage": "https://github.com/Project-Setup/nextjs-plasmic-github-pages#readme"
 }
