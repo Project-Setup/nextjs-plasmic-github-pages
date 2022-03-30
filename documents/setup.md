@@ -45,6 +45,12 @@
     pnpm install
     ```
 
+1. modify the `package.json` information if needed
+
+    ```sh
+    pnpm init
+    ```
+
 ## [Deploy to Github Pages](https://docs.github.com/en/pages/quickstart)
 
 1. set `basePath` for production env only in `next.config.js`
